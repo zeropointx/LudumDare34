@@ -5,7 +5,7 @@ public class SceneSwitch : MonoBehaviour {
 
     public float timeBetween = 10;
     public float timeElapsed = 0;
-    public int sceneSelect = 4;
+    public int sceneSelect = 1;
 	// Use this for initialization
 	void Start () 
     {
@@ -20,7 +20,7 @@ public class SceneSwitch : MonoBehaviour {
             if (timeElapsed >= timeBetween)
             {
                 transform.GetComponent<ChangeStage>().ChangeScene(sceneSelect);
-                --sceneSelect;
+                ++sceneSelect;
                 timeElapsed = 0;
             }
         }

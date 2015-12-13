@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class EnemyHandler : MonoBehaviour {
     public List<GameObject> enemies = new List<GameObject>();
     GenerateTileMap tilemapScript;
-    public GameObject enemy;
+    public GameObject[] enemy;
     float spawnTimer = 0.0f;
     float spawnDelay = 1.0f;
 	// Use this for initialization
@@ -32,7 +32,7 @@ public class EnemyHandler : MonoBehaviour {
     {
         GameObject nextTile = tilemapScript.getNextTilePath(tilemapScript.enemySpawn);
         Vector3 tempPos =  nextTile.transform.position - tilemapScript.enemySpawn.transform.position;
-
-        enemies.Add((GameObject)GameObject.Instantiate(enemy, tilemapScript.enemySpawn.transform.position, Enemy.GetRotation(tempPos)));
+        int randomNumber = Random.Range(0, enemy.Length);
+        enemies.Add((GameObject)GameObject.Instantiate(enemy[randomNumber], tilemapScript.enemySpawn.transform.position, Enemy.GetRotation(tempPos)));
     }
 }

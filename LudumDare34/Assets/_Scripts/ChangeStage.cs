@@ -16,7 +16,7 @@ public class ChangeStage : MonoBehaviour {
 	}
     public void ChangeScene(int number)
     {
-        GameObject.Find("Canvas").active = false;
+    
         //Application.LoadLevel("Stage" + number);
         switch(number)
         {
@@ -41,5 +41,8 @@ public class ChangeStage : MonoBehaviour {
                     break;
                 }
         }
+        GameObject gg = GameObject.Find("Canvas");
+        if(gg != null)
+        gg.active = false;
     }
 }

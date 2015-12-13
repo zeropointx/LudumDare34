@@ -15,7 +15,11 @@ public class Enemy : MonoBehaviour {
 	void Update () {
 
         if (isAtTree)
+        {
+            GameObject.Destroy(gameObject);
             return;
+        }
+          
         Vector2 currentPos = new Vector2(transform.position.x,transform.position.y);
         Vector2 targetPos = new Vector2();
         if (currentTarget == null)
@@ -29,7 +33,7 @@ public class Enemy : MonoBehaviour {
             targetPos = new Vector2(currentTarget.transform.position.x, currentTarget.transform.position.y);
 
             //New target
-            if (Vector2.Distance(currentPos, targetPos) < 0.3f)
+            if (Vector2.Distance(currentPos, targetPos) < 0.1f)
             {
                 currentTarget = tilemapScript.getNextTilePath(currentTarget);
                 if (currentTarget == tilemapScript.tree)
