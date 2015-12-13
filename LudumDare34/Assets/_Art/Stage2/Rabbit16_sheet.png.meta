@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: dfcaaa7f4df62774983034e99ebd0b7f
-timeCreated: 1450004552
+timeCreated: 1450015548
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -58,8 +58,8 @@ TextureImporter:
     - name: Rabbit16_sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 1
+        y: 18
         width: 16
         height: 16
       alignment: 0
@@ -69,8 +69,8 @@ TextureImporter:
     - name: Rabbit16_sheet_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
+        x: 18
+        y: 18
         width: 16
         height: 16
       alignment: 0
@@ -80,8 +80,8 @@ TextureImporter:
     - name: Rabbit16_sheet_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 1
+        y: 1
         width: 16
         height: 16
       alignment: 0
@@ -91,8 +91,8 @@ TextureImporter:
     - name: Rabbit16_sheet_3
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 18
+        y: 1
         width: 16
         height: 16
       alignment: 0
