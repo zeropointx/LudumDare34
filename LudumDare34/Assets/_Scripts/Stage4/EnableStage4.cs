@@ -6,7 +6,6 @@ public class EnableStage4 : MonoBehaviour {
     public GameObject mapPrefab;
 	// Use this for initialization
 	void Start () {
-        Enable();
 	}
 	
 	// Update is called once per frame
