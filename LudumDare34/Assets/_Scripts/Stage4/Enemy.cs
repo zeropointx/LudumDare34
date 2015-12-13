@@ -2,11 +2,13 @@
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
+    public GameObject explosionAnimation;
     GenerateTileMap tilemapScript;
     GameObject currentTarget = null;
     bool isAtTree = false;
     float speed = 1.0f;
     public int hp = 5;
+    public int damage;
 	// Use this for initialization
 	void Start () {
         tilemapScript = GameObject.Find("Map").GetComponent<GenerateTileMap>();
@@ -17,7 +19,8 @@ public class Enemy : MonoBehaviour {
 
         if (isAtTree)
         {
-            GameObject.Destroy(gameObject);
+            GlobalVariables.globalVariables.reduceHp(damage);
+            Explode();
             return;
         }
           
@@ -63,8 +66,15 @@ public class Enemy : MonoBehaviour {
     void TakeDamage()
     {
         hp--;
-        if( hp <= 0)
+        if (hp <= 0)
+        {
+            Explode();
+        }
+    }
+    void Explode()
+    {
         GameObject.Destroy(gameObject);
+        GameObject.Instantiate(explosionAnimation, transform.position, new Quaternion());
     }
     void OnTriggerEnter2D(Collider2D coll) 
     {

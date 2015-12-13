@@ -43,12 +43,10 @@ public class Turret : MonoBehaviour {
     }
     void UpdateShooting()
     {
-        if(target == null)
-        {
+
             target = GetClosestEnemy();
             if (target == null)
                 return;
-        }
         if(!shot)
         {
             Shoot();
@@ -57,13 +55,13 @@ public class Turret : MonoBehaviour {
     }
     GameObject GetClosestEnemy()
     {
-        for( int i = enemyHandler.enemies.Count -1; i > -1; i--)
+        for (int i = 0; i <  enemyHandler.enemies.Count; i++)
         { 
             GameObject tempEnemy = enemyHandler.enemies[i];
             if (tempEnemy == null)
                 continue;
             Vector3 tempEnemyPos = tempEnemy.transform.position;
-            if(Vector2.Distance(new Vector2(tempEnemyPos.x,tempEnemyPos.y),new Vector2(transform.position.x,transform.position.y)) < (range * 0.64f ) / 2)
+            if(Vector2.Distance(new Vector2(tempEnemyPos.x,tempEnemyPos.y),new Vector2(transform.position.x,transform.position.y)) < (range * 0.64f  /2))
             {
                 return tempEnemy;
             }
@@ -75,7 +73,7 @@ public class Turret : MonoBehaviour {
     void Shoot()
     {
         Vector3 bulletTarget = target.transform.position - transform.position;
-        GameObject bulletInstance = (GameObject)GameObject.Instantiate(bulletPrefab, transform.position, Enemy.GetRotation(target.transform.position - transform.position));
+        GameObject bulletInstance = (GameObject)GameObject.Instantiate(bulletPrefab, transform.position, Enemy.GetRotation(bulletTarget));
         bulletInstance.GetComponent<Bullet>().target = bulletTarget;
         shot = true;
         shootTimer = 0.0f;
