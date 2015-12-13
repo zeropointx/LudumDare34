@@ -17,10 +17,10 @@ public class Tile : MonoBehaviour {
     public void ChangeSprite(int newId)
     {
         GameObject gameObject = generateTileMapScript.prefabs[newId];
-        Vector3 localPos = transform.localPosition;
+        Vector3 localPos = transform.position;
 
         GameObject newInstance = (GameObject)GameObject.Instantiate(gameObject, localPos, transform.rotation);
-        newInstance.transform.localPosition = localPos;
+        newInstance.transform.position = localPos;
         newInstance.transform.parent = generateTileMapScript.parentGameobjects[newId].transform;
         GameObject.Destroy(transform.gameObject);
        // transform.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<SpriteRenderer>().sprite;

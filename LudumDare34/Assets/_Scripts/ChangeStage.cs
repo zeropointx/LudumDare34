@@ -41,8 +41,5 @@ public class ChangeStage : MonoBehaviour {
                     break;
                 }
         }
-        GameObject gg = GameObject.Find("Canvas");
-        if(gg != null)
-        gg.active = false;
     }
 }
