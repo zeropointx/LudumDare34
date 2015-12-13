@@ -4,8 +4,8 @@ using System.Collections;
 public class Bullet : MonoBehaviour {
     public Vector3 target = new Vector3();
     float killTimer = 0.0f;
-    float killDelay = 5.0f;
-    float speed = 1.5f;
+    float killDelay = 1.0f;
+    float speed = 2.5f;
 	// Use this for initialization
 	void Start () {
 	
@@ -21,12 +21,4 @@ public class Bullet : MonoBehaviour {
         }
         GetComponent<Rigidbody2D>().velocity = (target.normalized * speed);
 	}
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-        if (coll.gameObject.tag == "Enemy")
-        {
-            coll.gameObject.SendMessage("TakeDamage");
-            GameObject.Destroy(gameObject);
-        }
-    }
 }

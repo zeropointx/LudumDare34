@@ -9,7 +9,7 @@ public class Turret : MonoBehaviour {
     GameObject target = null;
     float range = 5.0f;
     float shootTimer = 0.0f;
-    float shootDelay = 10.0f;
+    float shootDelay = 5.1f;
     bool shot = false;
 	// Use this for initialization
 	void Start () {

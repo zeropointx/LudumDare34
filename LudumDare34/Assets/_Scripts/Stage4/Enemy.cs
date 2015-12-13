@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour {
     GameObject currentTarget = null;
     bool isAtTree = false;
     float speed = 1.0f;
+    public int hp = 5;
 	// Use this for initialization
 	void Start () {
         tilemapScript = GameObject.Find("Map").GetComponent<GenerateTileMap>();
@@ -61,6 +62,16 @@ public class Enemy : MonoBehaviour {
     }
     void TakeDamage()
     {
+        hp--;
+        if( hp <= 0)
         GameObject.Destroy(gameObject);
+    }
+    void OnTriggerEnter2D(Collider2D coll) 
+    {
+        if (coll.gameObject.tag == "Bullet")
+        {
+            TakeDamage();
+            GameObject.Destroy(coll.gameObject);
+        }
     }
 }
