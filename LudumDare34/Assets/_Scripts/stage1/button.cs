@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class button : MonoBehaviour {
-
+    public AudioSource source;
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+    {
 	}
 	
 	// Update is called once per frame
@@ -15,5 +15,8 @@ public class button : MonoBehaviour {
     void OnMouseDown()
     {
         transform.parent.GetComponent<WaterScript>().AddWater();
+        AudioSource a = transform.GetComponent<AudioSource>();
+        transform.GetComponent<AudioSource>().Play();
+        source.Play();
     }
 }
