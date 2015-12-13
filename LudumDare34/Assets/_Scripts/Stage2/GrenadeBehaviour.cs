@@ -17,20 +17,20 @@ public class GrenadeBehaviour : MonoBehaviour {
         timer += Time.deltaTime;
         if (exploded)
         {
-            if (timer >= 0.25f)
+            if (timer >= 0.2f)
             {
                 Destroy(this.gameObject);
             }
         }
         // fuse
-        else if (timer >= 2)
+        else if (timer >= 1.5f)
             Explode();
 	}
 
     public void Explode(){
         if (!exploded){
             exploded = true;
-            this.gameObject.GetComponent<CircleCollider2D>().radius = 0.2f;
+            this.gameObject.GetComponent<CircleCollider2D>().radius = 0.25f;
             this.gameObject.GetComponent<Animator>().enabled = true;
             timer = 0;
         }
