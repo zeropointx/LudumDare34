@@ -27,7 +27,7 @@ public class appleScript : MonoBehaviour {
         if(coll.gameObject.tag == "grapper")
         {
             Destroy(gameObject);
-            //Anna rahea koodi tähän
+            GlobalVariables.globalVariables.addMoney(50);
         }
     }
 }

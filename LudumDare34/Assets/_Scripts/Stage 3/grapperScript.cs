@@ -6,7 +6,7 @@ public class grapperScript : MonoBehaviour
     Vector3 position;
     public GameObject apple;
     public float minY, maxY, minX, maxX;
-    bool hPlus, hMinus, vPlus, vMinus;
+    public bool hPlus, hMinus, vPlus, vMinus;
     public bool horizontalMode, verticalMode;
     public float speed;
 

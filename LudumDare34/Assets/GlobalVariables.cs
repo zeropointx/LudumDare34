@@ -5,9 +5,12 @@ using UnityEngine.UI;
 public class GlobalVariables : MonoBehaviour {
     public Text hpText;
     public Text moneyText;
+    public Text timeText;
     public static GlobalVariables globalVariables;
     public int hp = 100;
     public int money = 100;
+    public int time = 60;
+
 	// Use this for initialization
     void Awake()
     {
@@ -20,6 +23,7 @@ public class GlobalVariables : MonoBehaviour {
 	void Update () {
         hpText.text = hp+"";
         moneyText.text = money+"";
+        timeText.text = time + "";
 	}
     public void addHp(int amount)
     {
@@ -44,5 +48,10 @@ public class GlobalVariables : MonoBehaviour {
     public int GetHp()
     {
         return hp;
+    }
+
+    public void setTime(float amount)
+    {
+        time = (int)amount;
     }
 }
