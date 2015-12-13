@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Tile : MonoBehaviour {
-
     GenerateTileMap generateTileMapScript;
     public int id;
 	// Use this for initialization
 	void Start () {
         generateTileMapScript = GameObject.Find("Map").GetComponent<GenerateTileMap>();
+
 	}
 	
 	// Update is called once per frame
@@ -28,8 +29,16 @@ public class Tile : MonoBehaviour {
     }
         public void OnMouseDown()
     {
-            if(id != 1 && id != 3 & id != 4)
-        ChangeSprite(4);
+        if (GlobalVariables.globalVariables.money >= 20)
+        {
+            if (id != 1 && id != 3 & id != 4)
+            {
+                ChangeSprite(4);
+                GlobalVariables.globalVariables.reduceMoney(20);
+
+            }
+
+        }
     }
 
 
