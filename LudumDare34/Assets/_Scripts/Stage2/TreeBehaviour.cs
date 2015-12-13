@@ -18,9 +18,8 @@ public class TreeBehaviour : MonoBehaviour {
     public void Damage(int damage) {
         health -= damage;
         health = Mathf.Max(health, 0);
-        //Debug.Log("health: " + health.ToString());
         Vector3 temp = this.gameObject.transform.FindChild("HealthBar").transform.localScale;
-        temp.x = (1.0f / (100.0f / health));
+        temp.x = 0.5f * (health / 100.0f );
         this.gameObject.transform.FindChild("HealthBar").transform.localScale = temp;
     }
 

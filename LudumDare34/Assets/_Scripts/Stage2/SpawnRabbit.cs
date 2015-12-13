@@ -17,7 +17,7 @@ public class SpawnRabbit : MonoBehaviour {
         if (spawnTimer >= 2) {
             spawnTimer = 0;
             GameObject clone = Instantiate(enemy);
-            Vector3 pos = new Vector3(-11, Random.Range(-2.5f, -3.6f), 0);
+            Vector3 pos = new Vector3(-11, -3.6f + 0.2f * Random.Range(1, 5), 0);
             float dir = 1;
             if (Random.value > 0.5)
             {
