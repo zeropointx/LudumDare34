@@ -3,7 +3,7 @@ using System.Collections;
 
 public class witheringScript : MonoBehaviour
 {
-
+    public SpriteRenderer sprout;
     public float withering;
 	// Use this for initialization
 	void Start () 
@@ -15,13 +15,9 @@ public class witheringScript : MonoBehaviour
     void Update()
     {
         withering = transform.FindChild("Water Bar").GetComponent<WaterScript>().waterAmount;
-        withering += transform.FindChild("Nutrient Bar").GetComponent<NutrientScript>().waterAmount;
-        Color color = transform.GetComponent<SpriteRenderer>().color;
+        withering += transform.FindChild("Nutrient Bar").GetComponent<WaterScript>().waterAmount;
+        var color = sprout.color;
         color.a = (withering / 200);
-        transform.GetComponent<SpriteRenderer>().color = color;
-        if(withering <= 0)
-        {
-            GlobalVariables.globalVariables.addHp(-1);
-        }
+        sprout.color = color;
     }
 }

@@ -2,24 +2,25 @@
 using System.Collections;
 
 public class SpriteChange : MonoBehaviour {
-
-    public SceneSwitch grenade;
+    SceneSwitch sceneSwitch;
+    public GameObject tree;
+    public GameObject sprout;
     int stageNum;
     public Sprite sprite;
 	// Use this for initialization
 	void Start ()
     {
-        stageNum = GetComponent<SceneSwitch>().sceneSelect;
+        sceneSwitch = GameObject.Find("SceneChange").transform.GetComponent<SceneSwitch>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        transform.GetComponent<SpriteRenderer>().sprite = sprite;
-        stageNum = grenade.sceneSelect;
-        if (stageNum >= 2)
+        stageNum = sceneSwitch.sceneSelect;
+        if (stageNum == 3)
         {
-            transform.GetComponent<SpriteRenderer>().sprite = sprite;
+            tree.active = true;
+            sprout.active = false;
         }
 	}
 }
