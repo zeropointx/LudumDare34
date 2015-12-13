@@ -2,14 +2,24 @@
 using System.Collections;
 
 public class appleScript : MonoBehaviour {
-	// Use this for initialization
-	void Start () {
+
+    float timer = 0;
+    public float witherTimer = 8;
+    // Use this for initialization
+	void Start () 
+    {
+
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () 
+    {
+        timer += Time.deltaTime;
+        if (timer >= witherTimer)
+        {
+            Destroy(gameObject);
+        }
 	}
 
     void OnCollisionEnter2D(Collision2D coll)
