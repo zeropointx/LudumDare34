@@ -164,7 +164,7 @@ public class GenerateTileMap : MonoBehaviour {
         }
         return null;
     }
-    GameObject getNextTilePath(GameObject g)
+   public GameObject getNextTilePath(GameObject g)
     {
        for( int i = 0; i < enemyPath.Count; i++)
        {

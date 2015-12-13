@@ -22,6 +22,6 @@ public class Tile : MonoBehaviour {
         public void OnMouseDown()
     {
             if(id != 1 && id != 3)
-        ChangeSprite(2);
+        ChangeSprite(4);
     }
 }
