@@ -17,14 +17,16 @@ public class EnemyRabbitBehaviour : MonoBehaviour {
 	}
 
     void OnTriggerEnter2D(Collider2D other) {
+        string name = other.gameObject.name;
         if (other.gameObject.tag == "Tree")
         {
             other.gameObject.GetComponent<TreeBehaviour>().Damage(4);
             Destroy(this.gameObject);
         }
-    }
-
-    void OnMouseDown() {
-        Destroy(this.gameObject);
+        else if (name == "Grenade")
+        {
+            other.gameObject.GetComponent<GrenadeBehaviour>().Explode();
+            Destroy(this.gameObject);
+        }
     }
 }
