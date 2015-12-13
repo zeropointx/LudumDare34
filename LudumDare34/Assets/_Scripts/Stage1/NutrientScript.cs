@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WaterScript : MonoBehaviour 
+public class NutrientScript : MonoBehaviour 
 {
     public GUIStyle progress_empty;
     public GUIStyle progress_full;
@@ -19,7 +19,7 @@ public class WaterScript : MonoBehaviour
     void OnGUI()
     {
         pos = transform.parent.position;
-        pos.x += 485;
+        pos.x += 200;
         pos.y += 300;
         //draw the background:
         GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y), emptyTex, progress_empty);

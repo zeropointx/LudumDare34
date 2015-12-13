@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SpriteChange : MonoBehaviour {
 
+    public SceneSwitch grenade;
     int stageNum;
     public Sprite sprite;
 	// Use this for initialization
@@ -14,8 +15,9 @@ public class SpriteChange : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        stageNum = GetComponent<SceneSwitch>().sceneSelect;
-        if (stageNum == 2)
+        transform.GetComponent<SpriteRenderer>().sprite = sprite;
+        stageNum = grenade.sceneSelect;
+        if (stageNum >= 2)
         {
             transform.GetComponent<SpriteRenderer>().sprite = sprite;
         }
