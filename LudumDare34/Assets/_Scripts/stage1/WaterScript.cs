@@ -10,7 +10,7 @@ public class WaterScript : MonoBehaviour
     //current progress
     public float barDisplay;
 
-    public Vector2 pos = new Vector2(10, 50);
+    public Vector2 pos = new Vector2(100, 500);
     Vector2 size = new Vector2(100, 50);
 
     public Texture2D emptyTex;
