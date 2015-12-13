@@ -17,6 +17,7 @@ public class EnableStage4 : MonoBehaviour {
         GameObject map = GameObject.Instantiate(mapPrefab);
         map.name = "Map";
         GameObject enemy = GameObject.Instantiate(enemyHandlerPrefab);
+        enemy.name = "EnemyHandler";
 
     }
 }

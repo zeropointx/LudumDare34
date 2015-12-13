@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 public class EnemyHandler : MonoBehaviour {
-    List<GameObject> enemies = new List<GameObject>();
+    public List<GameObject> enemies = new List<GameObject>();
     GenerateTileMap tilemapScript;
     public GameObject enemy;
     float spawnTimer = 0.0f;
@@ -14,12 +14,18 @@ public class EnemyHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
-        if(spawnTimer >= spawnDelay)
+        for (int i = 0; i < enemies.Count; i++ )
         {
-            spawnTimer = 0.0f;
-            SpawnEnemy();
+            if (enemies[i] == null)
+                enemies.Remove(enemies[i]);
         }
+
+
+            if (spawnTimer >= spawnDelay)
+            {
+                spawnTimer = 0.0f;
+                SpawnEnemy();
+            }
         spawnTimer += Time.deltaTime;
 	}
     void SpawnEnemy()

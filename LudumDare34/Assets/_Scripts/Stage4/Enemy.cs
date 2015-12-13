@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         if (isAtTree)
             return;
         Vector2 currentPos = new Vector2(transform.position.x,transform.position.y);
@@ -51,6 +52,11 @@ public class Enemy : MonoBehaviour {
     {
 
         float rotation = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
+        rotation = Mathf.Round(rotation / 90.0f) * 90.0f;
         return Quaternion.Euler(0.0f, 0.0f, rotation);
+    }
+    void TakeDamage()
+    {
+        GameObject.Destroy(gameObject);
     }
 }
