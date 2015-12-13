@@ -5,11 +5,10 @@ public class grapperScript : MonoBehaviour
 {
     Vector3 position;
     public GameObject apple;
-    public int minY, maxY, minX, maxX;
+    public float minY, maxY, minX, maxX;
     bool hPlus, hMinus, vPlus, vMinus;
     public bool horizontalMode, verticalMode;
-    public GameObject rotateButton, grabButton;
-    public int speed;
+    public float speed;
 
     // Use this for initialization
     void Start()
@@ -25,7 +24,7 @@ public class grapperScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        position = transform.position;
+        position = transform.localPosition;
 
         checkCollision();
         move();
