@@ -86,7 +86,7 @@ public class GenerateTileMap : MonoBehaviour {
         int index = 0;
         while(current != tree)
         {
-            if (index > 100)
+            if (index > 500)
                 break;
             var tileObjects = getCloseTiles(current);
             if(tileObjects.Count > 2)

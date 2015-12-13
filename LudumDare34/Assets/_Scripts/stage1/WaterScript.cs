@@ -40,7 +40,7 @@ public class WaterScript : MonoBehaviour
 
     void Update()
     {
-        waterAmount -= 0.25f;
+        waterAmount -= 0.125f;
         if (waterAmount < 0)
             waterAmount = 0;
         //the player's health
