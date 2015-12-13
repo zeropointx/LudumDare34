@@ -22,7 +22,8 @@ public class GrenadeThrowing : MonoBehaviour {
                 {
                     GameObject clone = Instantiate(grenade);
                     clone.name = "Grenade";
-                    clone.transform.position = hit.point;
+                    clone.transform.position = new Vector3(9, 7, 0);
+                    clone.GetComponent<GrenadeBehaviour>().Launch(hit.point);
                     clone.transform.parent = transform.parent.FindChild("Grenades");
                     clone.GetComponent<Animator>().enabled = false;
                 }
