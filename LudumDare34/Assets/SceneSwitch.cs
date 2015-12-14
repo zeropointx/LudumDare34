@@ -26,6 +26,7 @@ public class SceneSwitch : MonoBehaviour {
             {
                 if (sceneSelect == 3)
                 {
+                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
                     SceneManager.LoadScene("victoryScene");
                     return;
                 }
@@ -39,7 +40,8 @@ public class SceneSwitch : MonoBehaviour {
         }
         if(GlobalVariables.globalVariables.hp <= 0)
         {
-                SceneManager.LoadScene("gameOver");
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            SceneManager.LoadScene("gameOver");
         }
 	}
 }

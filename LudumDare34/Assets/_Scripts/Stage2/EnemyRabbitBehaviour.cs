@@ -5,6 +5,7 @@ public class EnemyRabbitBehaviour : MonoBehaviour {
 
     public float direction;
     public float speed;
+    public GameObject bloodEffect;
 
 	// Use this for initialization
 	void Start () {
@@ -22,10 +23,16 @@ public class EnemyRabbitBehaviour : MonoBehaviour {
             other.gameObject.GetComponent<TreeBehaviour>().Damage(4);
             Destroy(this.gameObject);
         }
-        if (other.gameObject.name == "Grenade")
+        else if (other.gameObject.name == "Grenade")
         {
             other.gameObject.GetComponent<GrenadeBehaviour>().Explode();
+            SpawnBlood();
             Destroy(this.gameObject);
         }
+    }
+
+    private void SpawnBlood() {
+        GameObject blood = Instantiate(bloodEffect);
+        blood.transform.position = transform.position;
     }
 }
