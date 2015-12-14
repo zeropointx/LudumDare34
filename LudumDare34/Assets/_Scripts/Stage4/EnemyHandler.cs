@@ -8,7 +8,7 @@ public class EnemyHandler : MonoBehaviour {
     float spawnTimer = 0.0f;
     float currentSpawnDelay = 0.0f;
     float spawnDelayMax = 10.0f;
-    float spawnDelayMin = 1.0f;
+    float spawnDelayMin = 0.5f;
     float spawnDelayDecrementMultiplier = 0.03f;
 	// Use this for initialization
 	void Start () {
