@@ -15,8 +15,8 @@ public class witheringScript : MonoBehaviour
 	// Update is called once per frame
     void Update()
     {
-        withering = transform.FindChild("Water Bar").GetComponent<WaterScript>().waterAmount;
-        withering += transform.FindChild("Nutrient Bar").GetComponent<NutrientScript>().waterAmount;//kiitos miika
+        withering = GameObject.Find("Water Bar").GetComponent<WaterScript>().waterAmount;
+        withering += GameObject.Find("Nutrient Bar").GetComponent<NutrientScript>().waterAmount;//kiitos miika
         var color = sprout.color;
         color.a = (withering / 200);
         sprout.color = color;
