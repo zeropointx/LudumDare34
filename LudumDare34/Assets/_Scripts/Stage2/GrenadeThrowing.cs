@@ -4,6 +4,7 @@ using System.Collections;
 public class GrenadeThrowing : MonoBehaviour {
 
     public GameObject grenade;
+    public Texture2D cursorTexture;
 
 	// Use this for initialization
 	void Start () {
@@ -30,4 +31,13 @@ public class GrenadeThrowing : MonoBehaviour {
             }
         }
 	}
+    
+    void OnMouseEnter()
+    {
+        Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
+    }
+    void OnMouseExit()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
 }
