@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour {
-
-    public float timeBetween = 10;
+    float[] timesBetween = new float[]{5.0f,6f,7f,8f};
+  //  public float timeBetween = 10;
     public float timeElapsed = 0;
-    public int sceneSelect = 2;
+    public int sceneSelect = 0;
 	// Use this for initialization
 	void Start () 
     {
@@ -16,15 +16,22 @@ public class SceneSwitch : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        GlobalVariables.globalVariables.setTime(timeBetween-timeElapsed);
-        if(sceneSelect <= 4)
+        GlobalVariables.globalVariables.setTime(timesBetween[sceneSelect]-timeElapsed);
+        if(sceneSelect <= 3)
         { 
             timeElapsed += Time.deltaTime;
             
-            if (timeElapsed >= timeBetween)
+           
+            if (timeElapsed >= timesBetween[sceneSelect])
             {
-                transform.GetComponent<ChangeStage>().ChangeScene(sceneSelect);
+                if (sceneSelect == 3)
+                {
+                    Debug.Log("Won");
+                    return;
+                }
                 ++sceneSelect;
+                transform.GetComponent<ChangeStage>().ChangeScene(sceneSelect+1);
+               
                 timeElapsed = 0;
             }
 

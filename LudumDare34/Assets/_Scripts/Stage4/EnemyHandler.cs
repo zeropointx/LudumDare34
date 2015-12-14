@@ -25,7 +25,7 @@ public class EnemyHandler : MonoBehaviour {
             if (spawnTimer >= currentSpawnDelay)
             {
                 spawnTimer = 0.0f;
-                currentSpawnDelay = Random.Range(0.0f, spawnDelayMax);
+                currentSpawnDelay = Random.Range(0.5f, spawnDelayMax);
                 SpawnEnemy();
             }
         spawnTimer += Time.deltaTime;
