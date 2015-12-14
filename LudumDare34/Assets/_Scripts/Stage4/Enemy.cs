@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
+    public GameObject sparkPrefab;
     public GameObject explosionAnimation;
     GenerateTileMap tilemapScript;
     GameObject currentTarget = null;
@@ -69,6 +70,10 @@ public class Enemy : MonoBehaviour {
         if (hp <= 0)
         {
             Explode();
+        }
+        else
+        {
+            GameObject.Instantiate(sparkPrefab, transform.position, new Quaternion());
         }
     }
     void Explode()
