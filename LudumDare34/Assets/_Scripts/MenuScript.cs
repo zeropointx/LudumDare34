@@ -25,4 +25,13 @@ public class MenuScript : MonoBehaviour {
         SceneManager.LoadScene("menu");
     }
 
+    public void quitGame()
+    {
+        Application.Quit();
+    }
+
+    public void loadCredits()
+    {
+        SceneManager.LoadScene("credits");
+    }
 }
