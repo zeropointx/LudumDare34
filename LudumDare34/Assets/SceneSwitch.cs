@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour {
 
@@ -25,6 +26,11 @@ public class SceneSwitch : MonoBehaviour {
                 transform.GetComponent<ChangeStage>().ChangeScene(sceneSelect);
                 ++sceneSelect;
                 timeElapsed = 0;
+            }
+
+            if(GlobalVariables.globalVariables.hp <= 0)
+            {
+                SceneManager.LoadScene("gameOver");
             }
         }
 
