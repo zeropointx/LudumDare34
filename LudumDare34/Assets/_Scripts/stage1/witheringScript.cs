@@ -19,5 +19,9 @@ public class witheringScript : MonoBehaviour
         var color = sprout.color;
         color.a = (withering / 200);
         sprout.color = color;
+        if (withering <= 0)
+        {
+            GlobalVariables.globalVariables.addHp(-1);
+        }
     }
 }
