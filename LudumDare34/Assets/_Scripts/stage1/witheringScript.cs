@@ -5,6 +5,7 @@ public class witheringScript : MonoBehaviour
 {
     public SpriteRenderer sprout;
     public float withering;
+    public float withering2;
     float timeElapsed = 0;
 	// Use this for initialization
 	void Start () 
@@ -16,12 +17,12 @@ public class witheringScript : MonoBehaviour
     void Update()
     {
         withering = GameObject.Find("Water Bar").GetComponent<WaterScript>().waterAmount;
-        withering += GameObject.Find("Nutrient Bar").GetComponent<NutrientScript>().waterAmount;//kiitos miika
+        withering2 = GameObject.Find("Nutrient Bar").GetComponent<NutrientScript>().waterAmount;//kiitos miika
         var color = sprout.color;
-        color.a = (withering / 200);
+        color.a = (withering + withering2 / 200);
         sprout.color = color;
 
-        if (withering <= 0)
+        if (withering <= 0 || withering2 <= 0)
         {
             timeElapsed += Time.deltaTime;
             if (timeElapsed >= 1)
