@@ -17,7 +17,7 @@ public class SceneSwitch : MonoBehaviour {
 	void Update ()
     {
         GlobalVariables.globalVariables.setTime(timeBetween-timeElapsed);
-        if(sceneSelect >= 0)
+        if(sceneSelect <= 4)
         { 
             timeElapsed += Time.deltaTime;
             
@@ -28,11 +28,11 @@ public class SceneSwitch : MonoBehaviour {
                 timeElapsed = 0;
             }
 
-            if(GlobalVariables.globalVariables.hp <= 0)
-            {
-                SceneManager.LoadScene("gameOver");
-            }
+            
         }
-
+        if(GlobalVariables.globalVariables.hp <= 0)
+        {
+                SceneManager.LoadScene("gameOver");
+        }
 	}
 }
