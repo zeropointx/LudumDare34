@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour {
-    float[] timesBetween = new float[]{5.0f,6f,7f,8f};
+    float[] timesBetween = new float[]{30.0f,60f,120f,300f};
   //  public float timeBetween = 10;
     public float timeElapsed = 0;
     public int sceneSelect = 0;
@@ -26,7 +26,7 @@ public class SceneSwitch : MonoBehaviour {
             {
                 if (sceneSelect == 3)
                 {
-                    Debug.Log("Won");
+                    SceneManager.LoadScene("victoryScene");
                     return;
                 }
                 ++sceneSelect;

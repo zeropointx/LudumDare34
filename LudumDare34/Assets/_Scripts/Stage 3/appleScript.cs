@@ -27,7 +27,7 @@ public class appleScript : MonoBehaviour {
         if(coll.gameObject.tag == "grapper")
         {
             Destroy(gameObject);
-            GlobalVariables.globalVariables.addMoney(50);
+            GlobalVariables.globalVariables.addMoney(10);
         }
     }
 }
