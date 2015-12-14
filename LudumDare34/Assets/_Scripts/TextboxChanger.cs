@@ -6,7 +6,7 @@ public class TextboxChanger : MonoBehaviour
 {
 
     public GameObject[] textboxes;
-    int stage = 0;
+    public int stage = 0;
     public float timer = 0.0f;
     public float timerDelay = 10.0f;
     float disappearDelay = 8.0f;
@@ -18,7 +18,7 @@ public class TextboxChanger : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        setStage(1);
+       // setStage(1);
     }
 
     void Start()
