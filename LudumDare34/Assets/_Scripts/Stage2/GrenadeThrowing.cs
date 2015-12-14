@@ -13,7 +13,7 @@ public class GrenadeThrowing : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("Fire1") && GrenadeBehaviour.GetCount() < 3)
+        if (Input.GetButtonDown("Fire1") && GrenadeBehaviour.totalCount < 3)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);

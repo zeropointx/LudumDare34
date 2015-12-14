@@ -5,11 +5,11 @@ public class GrenadeBehaviour : MonoBehaviour {
 
     public float fuseTime = 1.25f;
     public float explosionTime = 0.15f;
+    public static int totalCount = 0;
 
     private Vector3 target;
     private float timer;
     private bool exploded;
-    private static int totalCount = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -61,10 +61,6 @@ public class GrenadeBehaviour : MonoBehaviour {
         float power = 550.0f;
         Vector2 velocity = new Vector2(Mathf.Cos(angleToPoint + angleCorrection) * power, Mathf.Sin(angleToPoint + angleCorrection) * power);
         this.GetComponent<Rigidbody2D>().AddForce(velocity, ForceMode2D.Force);
-    }
-
-    public static int GetCount() {
-        return totalCount;
     }
 
     void OnTriggerEnter2D(Collider2D other)
