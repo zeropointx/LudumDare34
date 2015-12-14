@@ -3,10 +3,13 @@ using System.Collections;
 
 public class GrenadeBehaviour : MonoBehaviour {
 
+    public float fuseTime = 1.25f;
+    public float explosionTime = 0.15f;
+
     private Vector3 target;
     private float timer;
     private bool exploded;
-    private static int totalCount;
+    private static int totalCount = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -20,14 +23,16 @@ public class GrenadeBehaviour : MonoBehaviour {
         timer += Time.deltaTime;
         if (exploded)
         {
-            if (timer >= 0.15f)
+            if (timer >= explosionTime)
             {
                 totalCount--;
+                totalCount = Mathf.Max(totalCount, 0);
+                //Debug.Log("Grenades: " + totalCount.ToString());
                 Destroy(this.gameObject);
             }
         }
         // fuse
-        else if (timer >= 1.15f)
+        else if (timer >= fuseTime)
             Explode();
 
         if (this.transform.position.y <= target.y)
@@ -60,5 +65,13 @@ public class GrenadeBehaviour : MonoBehaviour {
 
     public static int GetCount() {
         return totalCount;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Grenade")
+        {
+            Explode();
+        }
     }
 }
