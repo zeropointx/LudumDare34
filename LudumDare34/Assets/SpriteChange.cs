@@ -17,7 +17,7 @@ public class SpriteChange : MonoBehaviour {
 	void Update ()
     {
         stageNum = sceneSwitch.sceneSelect;
-        if (stageNum == 3)
+        if (stageNum == 1)
         {
             tree.SetActive(true);
             sprout.SetActive(false);
