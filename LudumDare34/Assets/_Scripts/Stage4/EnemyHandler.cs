@@ -8,6 +8,8 @@ public class EnemyHandler : MonoBehaviour {
     float spawnTimer = 0.0f;
     float currentSpawnDelay = 0.0f;
     float spawnDelayMax = 10.0f;
+    float spawnDelayMin = 1.0f;
+    float spawnDelayDecrementMultiplier = 0.03f;
 	// Use this for initialization
 	void Start () {
         tilemapScript = GameObject.Find("Map").GetComponent<GenerateTileMap>();
@@ -25,8 +27,11 @@ public class EnemyHandler : MonoBehaviour {
             if (spawnTimer >= currentSpawnDelay)
             {
                 spawnTimer = 0.0f;
-                currentSpawnDelay = Random.Range(0.5f, spawnDelayMax);
+                currentSpawnDelay = Random.Range(spawnDelayMin, spawnDelayMax);
                 SpawnEnemy();
+                spawnDelayMax -= spawnDelayMax *spawnDelayDecrementMultiplier;
+                if (spawnDelayMax < spawnDelayMin)
+                    spawnDelayMax = spawnDelayMin;
             }
         spawnTimer += Time.deltaTime;
 	}

@@ -29,12 +29,12 @@ public class Tile : MonoBehaviour {
     }
         public void OnMouseDown()
     {
-        if (GlobalVariables.globalVariables.money >= 20)
+        if (GlobalVariables.globalVariables.money >= 30)
         {
             if (id != 1 && id != 3 & id != 4)
             {
                 ChangeSprite(4);
-                GlobalVariables.globalVariables.reduceMoney(20);
+                GlobalVariables.globalVariables.reduceMoney(30);
 
             }
 

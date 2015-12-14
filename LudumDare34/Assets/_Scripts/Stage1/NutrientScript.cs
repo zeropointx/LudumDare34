@@ -21,7 +21,7 @@ public class NutrientScript : MonoBehaviour
         //Vector3 posit = GameObject.Find("Fertilizing button").transform.position;
         Vector3 posit = new Vector3(Screen.width / 4, Screen.height / 2);
         pos = posit;//Camera.main.WorldToScreenPoint(posit);
-        pos.x -= Screen.height * 0.25f;
+        pos.x -= Screen.height * 0.27f;
         pos.y -= Screen.height * 0.05f;
       //  pos.y -= 150.0f;
         //draw the background:
