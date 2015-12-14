@@ -5,7 +5,7 @@ public class Bullet : MonoBehaviour {
     public Vector3 target = new Vector3();
     float killTimer = 0.0f;
     float killDelay = 1.0f;
-    float speed = 2.5f;
+    float speed = 3f;
 	// Use this for initialization
 	void Start () {
 	

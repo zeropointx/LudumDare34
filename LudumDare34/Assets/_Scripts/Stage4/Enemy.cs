@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour {
     GenerateTileMap tilemapScript;
     GameObject currentTarget = null;
     bool isAtTree = false;
-    float speed = 2.0f;
+    float speed = 1.8f;
     public int hp = 5;
     public int damage;
 	// Use this for initialization
