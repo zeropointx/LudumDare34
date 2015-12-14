@@ -18,9 +18,12 @@ public class NutrientScript : MonoBehaviour
 
     void OnGUI()
     {
-        pos = transform.parent.position;
-        pos.x += 200;
-        pos.y += 300;
+        //Vector3 posit = GameObject.Find("Fertilizing button").transform.position;
+        Vector3 posit = new Vector3(Screen.width / 4, Screen.height / 2);
+        pos = posit;//Camera.main.WorldToScreenPoint(posit);
+        pos.x -= Screen.height * 0.25f;
+        pos.y -= Screen.height * 0.05f;
+      //  pos.y -= 150.0f;
         //draw the background:
         GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y), emptyTex, progress_empty);
 

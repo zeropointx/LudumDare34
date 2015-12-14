@@ -18,9 +18,11 @@ public class WaterScript : MonoBehaviour
 
     void OnGUI()
     {
-        position = transform.parent.position;
-        position.x += 485;
-        position.y += 300;
+        //Vector3 pos = GameObject.Find("Watering button").transform.position;
+        Vector3 pos = new Vector3(Screen.width / 4, Screen.height / 2);
+        position = pos;// Camera.main.WorldToScreenPoint(pos);
+        position.y -= Screen.height* 0.05f;
+       // position.y -= 150.0f;
         //draw the background:
         GUI.BeginGroup(new Rect(position.x, position.y, size.x, size.y), emptyTex, progress_empty);
 
