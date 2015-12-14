@@ -16,7 +16,7 @@ public class ChangeStage : MonoBehaviour {
 	}
     public void ChangeScene(int number)
     {
-    
+        transform.GetComponent<TextboxChanger>().setStage(number);
         //Application.LoadLevel("Stage" + number);
         switch(number)
         {
