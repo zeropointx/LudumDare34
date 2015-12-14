@@ -15,10 +15,11 @@ public class witheringScript : MonoBehaviour
     void Update()
     {
         withering = transform.FindChild("Water Bar").GetComponent<WaterScript>().waterAmount;
-        withering += transform.FindChild("Nutrient Bar").GetComponent<WaterScript>().waterAmount;
+        withering += transform.FindChild("Nutrient Bar").GetComponent<NutrientScript>().waterAmount;//kiitos miika
         var color = sprout.color;
         color.a = (withering / 200);
         sprout.color = color;
+
         if (withering <= 0)
         {
             GlobalVariables.globalVariables.addHp(-1);
