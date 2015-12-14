@@ -5,6 +5,7 @@ public class witheringScript : MonoBehaviour
 {
     public SpriteRenderer sprout;
     public float withering;
+    float timeElapsed = 0;
 	// Use this for initialization
 	void Start () 
     {
@@ -22,7 +23,13 @@ public class witheringScript : MonoBehaviour
 
         if (withering <= 0)
         {
-            GlobalVariables.globalVariables.addHp(-1);
+            timeElapsed += Time.deltaTime;
+            if (timeElapsed >= 1)
+            {
+                timeElapsed = 0;
+                GlobalVariables.globalVariables.addHp(-4);
+            }
+            
         }
     }
 }
