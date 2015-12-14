@@ -10,7 +10,7 @@ public class WaterScript : MonoBehaviour
     //current progress
     public float barDisplay;
 
-    public Vector2 pos = new Vector2(100, 500);
+    Vector2 position;// = new Vector2(100, 500);
     Vector2 size = new Vector2(100, 50);
 
     public Texture2D emptyTex;
@@ -18,13 +18,13 @@ public class WaterScript : MonoBehaviour
 
     void OnGUI()
     {
-        pos = transform.parent.position;
-        pos.x += 485;
-        pos.y += 300;
+        position = transform.parent.position;
+        position.x += 485;
+        position.y += 300;
         //draw the background:
-        GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y), emptyTex, progress_empty);
+        GUI.BeginGroup(new Rect(position.x, position.y, size.x, size.y), emptyTex, progress_empty);
 
-        GUI.Box(new Rect(pos.x, pos.y, size.x, size.y), fullTex, progress_full);
+        GUI.Box(new Rect(position.x, position.y, size.x, size.y), fullTex, progress_full);
 
         //draw the filled-in part:
         GUI.BeginGroup(new Rect(0, 0, size.x * barDisplay, size.y));
